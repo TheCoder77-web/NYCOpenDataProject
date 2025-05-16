@@ -1,14 +1,14 @@
 h1{
   font-family:"Brush Scrip M7", cursive;
   font-weight:bold;
-  font-size:60px;
+  font-size:100px;
 }
 
 #banner{
   background-image: url("images/banner.png");
   color:lightblue;
   background-size:100% 100%;
-  padding:150px;
+  padding:275px;
   text-align:center;
 }
 
