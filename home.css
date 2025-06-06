@@ -12,26 +12,6 @@ h1{
   text-align:center;
 }
 
-nav{
-  background-color:deepskyblue;
-  text-align:center;
-}
-
-nav a{
-  color:black;
-  font-family:arial;
-  font-weight:bold;
-  text-decoration:none;
-  margin:0 10px 0 10px;
-  flex:1;
-  padding:10px;
-  text-decoration: none;
-}
-
-nav a:hover{
-  background-color:gold;
-}
-
 p{
 	background: #01153E;
 	border-style: outset;
@@ -53,9 +33,43 @@ img{
 
 }
  
-.container center{
+#Main-Content{
+ display:flex;
+ flex:1;
+}
+
+iframe{
+  border-style: outset;
+	border-radius: 40px;
+  border-color:black;
+  width:1050px;
+  height:515px;
+}
+
+.sub2 p{
+	background:#01153E;
+	border-style: outset;
+	border-radius: 30px;
+  border-color:deepskyblue;
+  font-family:Comic Sans MS;
+	color:white;
+	margin:15px;
+	padding:10px;
+}
+
+.container{
   display:flex;
 }
 
+.center{
+  justify-content:center;
+  align-items: center;
+}
+
+#sub{
+  justify-content:center;
+  align-items: center;
+  flex:1;
+}
 
 

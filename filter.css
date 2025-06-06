@@ -32,30 +32,38 @@ nav a:hover{
   background-color:gold;
 }
 
-p{
-	background: #01153E;
-	border-style: outset;
-	border-radius: 30px;
-  border-color:deepskyblue;
-  font-family:Comic Sans MS;
-	font-size:24px;
-	color:gold;
-	margin:10px;
-	padding:10px;
+nav{
+  background-color:deepskyblue;
+  text-align:center;
 }
 
-img{
-  width: 75%;
-  height: 90.25%;
-  border-style: outset;
-	border-radius: 30px;
-  border-color:gold;
-
-}
- 
-.container center{
+.container{
   display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
+#output{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
+.card{
+  margin:10px;
+  text-align:center;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 8px #01153E;
+}
 
+.fitted{
+  max-width:200px;
+  min-width:200px;
+  border-radius:5px;
+  box-shadow:2px 2px 2px gray;
+}

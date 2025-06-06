@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Arrest Data</title>
+    <link href="analysis.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="analysis.js"></script>
+  </head>
+<body>
+    <div id="banner" class="container center">
+        <h1>NYC Arrest Data</h1>
+    </div>
+    <br>
+
+    <nav class="container center">
+      <a href="index.html">Home</a>
+      <a href="filter.html">Information</a>
+      <a href="analysis.html">Analysis</a>
+    </nav>
+    
+    <link href="c3-eb4b9be8.css" rel="stylesheet" type="text/css" />
+
+    <script src="d3-5.8.2.min-c5268e33.js"></script>
+    <script src="c3.min-d2a1f852.js"></script>
+    
+    <script src="chart.js"></script>
+    <script src="analysis.js"></script>
+   </head>
+
+    <div class="container">
+      <div id="panel">
+        <div class="card">
+          <h3>Select Chart Type</h3>
+          <select id="chartType" style="width:200px;">
+            <option value="bar">Select Chart Type</option>
+            <option value="bar">Bar</option>
+            <option value="pie">Pie</option>
+          </select>
+        </div>
+        <div class="card">
+          <h3>Crime by Gender</h3>
+          <a class="button" onclick="chartGender()"> Display </a>
+        </div>
+      </div>
+      <div class="card">
+       <div id="chart"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arrest Data</title>
+  <link href="filter.css" rel="stylesheet" />
+  <script defer src="filter.js"></script>
+</head>
+<body>
+  <div id="banner" class="container center">
+    <h1>NYC Arrest Data</h1>
+  </div>
+
+  <nav class="container center">
+    <a href="index.html">Home</a>
+    <a href="filter.html">Information</a>
+    <a href="analysis.html">Analysis</a>
+  </nav>
+
+    <style>
+    /* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /* Hide original SELECT element */
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/* Arrow inside the select element */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Arrow flips up when open */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* Style the options */
+.select-items div,
+.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+  </style>
+
+  <h2>Select the Gender</h2>
+  <div class="custom-select" style="width:200px;">
+    <select id="gender">
+      <option value="all">Select</option>
+      <option value="all">All</option>
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+    </select>
+  </div>
+
+  <div id="output"></div>
+<script>
+  // Custom dropdown logic
+  document.addEventListener("DOMContentLoaded", function () {
+    var x, i, j, selElmnt, a, b, c;
+    x = document.getElementsByClassName("custom-select");
+    for (i = 0; i < x.length; i++) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+      a = document.createElement("DIV");
+      a.setAttribute("class", "select-selected");
+      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+      x[i].appendChild(a);
+
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide");
+      for (j = 1; j < selElmnt.length; j++) {
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+
+        c.addEventListener("click", function (e) {
+          var y, i, k, s, h, sl, yl;
+          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+          sl = s.length;
+          h = this.parentNode.previousSibling;
+          for (i = 0; i < sl; i++) {
+            if (s.options[i].innerHTML == this.innerHTML) {
+              s.selectedIndex = i;
+              s.value = s.options[i].value; // ✅ update hidden select value
+              s.dispatchEvent(new Event("change")); // ✅ notify listeners
+              h.innerHTML = this.innerHTML;
+
+              y = this.parentNode.getElementsByClassName("same-as-selected");
+              yl = y.length;
+              for (k = 0; k < yl; k++) {
+                y[k].removeAttribute("class");
+              }
+              this.setAttribute("class", "same-as-selected");
+              break;
+            }
+          }
+          h.click();
+
+          setTimeout(() => {
+            if (typeof filter === "function") {
+              filter(); // ✅ trigger filtering
+            }
+          }, 10);
+        });
+
+        b.appendChild(c);
+      }
+
+      x[i].appendChild(b);
+      a.addEventListener("click", function (e) {
+        e.stopPropagation();
+        closeAllSelect(this);
+        this.nextSibling.classList.toggle("select-hide");
+        this.classList.toggle("select-arrow-active");
+      });
+    }
+
+    function closeAllSelect(elmnt) {
+      var x, y, i, xl, yl, arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      xl = x.length;
+      yl = y.length;
+      for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i);
+        } else {
+          y[i].classList.remove("select-arrow-active");
+        }
+      }
+      for (i = 0; i < xl; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+        }
+      }
+    }
+
+    document.addEventListener("click", closeAllSelect);
+
+    // Call filter on page load to populate initially (optional)
+    if (typeof init === "function") {
+      init();
+    }
+  });
+</script>
+
+
+</body>
+</html>
