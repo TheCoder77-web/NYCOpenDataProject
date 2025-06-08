@@ -11,11 +11,7 @@ function fetchData() {
   fetch(url)
     .then(response => response.json())
     .then(json => {
-      data = json;
-      displayData("all"); 
-    })
-    .catch(error => {
-      console.error("Error fetching data:", error);
+      data = json; 
     });
 }
 

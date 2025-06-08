@@ -1,7 +1,12 @@
-h1{
-  font-family:"Brush Scrip M7", cursive;
-  font-weight:bold;
-  font-size:100px;
+body {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Brush Script MT", cursive;
+  font-weight: bold;
+  font-size: 100px;
 }
 
 #banner{
@@ -10,19 +15,20 @@ h1{
   background-size:100% 100%;
   padding:200px;
   text-align:center;
+  margin:0;
 }
 
 nav{
   background-color:deepskyblue;
   text-align:center;
+  margin:0;
 }
 
 nav a{
   color:black;
   font-family:arial;
   font-weight:bold;
-  text-decoration:none;
-  margin:0 10px 0 10px;
+  margin:0 10px;
   flex:1;
   padding:10px;
   text-decoration: none;
@@ -30,6 +36,12 @@ nav a{
 
 nav a:hover{
   background-color:gold;
+}
+
+.container.center{
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 p{
@@ -53,9 +65,6 @@ img{
 
 }
  
-.container center{
-  display:flex;
-}
 
 
 

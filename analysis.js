@@ -8,20 +8,32 @@ async function init() {
 
 init();
 
-function chartGender() {
-  let M = 0, F = 0;
+function chartAgeGroup() {
+  let a = 0, b = 0, c = 0, d = 0, e = 0;
+
   for (let i = 0; i < data.length; i++) {
     let person = data[i];
-    if (person.perp_sex === "M") {
-      M++;
-    } else if (person.perp_sex === "F") {
-      F++;
+    let age = person.age_group || person.perp_age_group;
+
+    if (age === "<18") {
+      a++;
+    } else if (age === "18-24") {
+      b++;
+    } else if (age === "25-44") {
+      c++;
+    } else if (age === "45-64") {
+      d++;
+    } else if (age === "65+") {
+      e++;
     }
   }
 
   let chartdata = [
-    ["Male", M],
-    ["Female", F]
+    ["<18", a],
+    ["18-24", b],
+    ["25-44", c],
+    ["45-64", d],
+    ["65+", e],
   ];
 
   let chartType = document.getElementById("chartType").value;

@@ -4,12 +4,15 @@
     <link href="analysis.css" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="analysis.js"></script>
+    <link href="c3-eb4b9be8.css" rel="stylesheet" type="text/css" />
+    <script src="d3-5.8.2.min-c5268e33.js"></script>
+    <script src="c3.min-d2a1f852.js"></script>
+    <script src="chart.js"></script>
   </head>
 <body>
     <div id="banner" class="container center">
         <h1>NYC Arrest Data</h1>
     </div>
-    <br>
 
     <nav class="container center">
       <a href="index.html">Home</a>
@@ -17,28 +20,22 @@
       <a href="analysis.html">Analysis</a>
     </nav>
     
-    <link href="c3-eb4b9be8.css" rel="stylesheet" type="text/css" />
-
-    <script src="d3-5.8.2.min-c5268e33.js"></script>
-    <script src="c3.min-d2a1f852.js"></script>
-    
-    <script src="chart.js"></script>
-    <script src="analysis.js"></script>
-   </head>
+    <p>This page will show you a chart of your choosing to display data that are all grouped into one. These charts will show crimes committed from different age groups. Clicking on a certain age group(s) below any chart will allow you to hide a specific age group.
+    </p>
 
     <div class="container">
       <div id="panel">
         <div class="card">
-          <h3>Select Chart Type</h3>
+          <h3 class="info">Select Chart Type</h3>
           <select id="chartType" style="width:200px;">
             <option value="bar">Select Chart Type</option>
             <option value="bar">Bar</option>
             <option value="pie">Pie</option>
           </select>
         </div>
-        <div class="card">
-          <h3>Crime by Gender</h3>
-          <a class="button" onclick="chartGender()"> Display </a>
+        <div class="card-buttons">
+          <h3>Crime by Age Group</h3>
+          <a class="button" onclick="chartAgeGroup()"> Display </a>
         </div>
       </div>
       <div class="card">

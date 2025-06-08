@@ -16,7 +16,7 @@
     <a href="analysis.html">Analysis</a>
   </nav>
 
-    <style>
+    <style> /*selection box from w3schools */
     /* The container must be positioned relative: */
 .custom-select {
   position: relative;
@@ -80,6 +80,8 @@
 
   </style>
 
+  <p class="description"> This page is an informational page that shows you data on crimes committed by people. You may use the selection button to filter a specific gender. Doing so will generate cards that show actual data from crimes committed by the gender of your choosing. The card will display the crime they committed, the time of the arrest, their race, and their gender. </p>
+  <div class="middle">
   <h2>Select the Gender</h2>
   <div class="custom-select" style="width:200px;">
     <select id="gender">
@@ -89,7 +91,7 @@
       <option value="F">Female</option>
     </select>
   </div>
-
+</div>
   <div id="output"></div>
 <script>
   // Custom dropdown logic
@@ -134,7 +136,7 @@
 
           setTimeout(() => {
             if (typeof filter === "function") {
-              filter(); // ✅ trigger filtering
+              filter();
             }
           }, 10);
         });
@@ -172,8 +174,7 @@
     }
 
     document.addEventListener("click", closeAllSelect);
-
-    // Call filter on page load to populate initially (optional)
+    
     if (typeof init === "function") {
       init();
     }

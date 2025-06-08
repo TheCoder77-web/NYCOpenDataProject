@@ -1,7 +1,12 @@
-h1{
-  font-family:"Brush Scrip M7", cursive;
-  font-weight:bold;
-  font-size:100px;
+body{
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Brush Script MT", cursive;
+  font-weight: bold;
+  font-size: 100px;
 }
 
 #banner{
@@ -10,19 +15,35 @@ h1{
   background-size:100% 100%;
   padding:200px;
   text-align:center;
+  margin: 0;
 }
+
+.middle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.middle h2{
+  font-family: Arial;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 
 nav{
   background-color:deepskyblue;
   text-align:center;
+  margin: 0;
 }
 
 nav a{
   color:black;
   font-family:arial;
   font-weight:bold;
-  text-decoration:none;
-  margin:0 10px 0 10px;
+  margin:0 10px;
   flex:1;
   padding:10px;
   text-decoration: none;
@@ -35,6 +56,18 @@ nav a:hover{
 nav{
   background-color:deepskyblue;
   text-align:center;
+}
+
+.description{
+	background: #01153E;
+	border-style: outset;
+	border-radius: 30px;
+  border-color:deepskyblue;
+  font-family:Comic Sans MS;
+	font-size:24px;
+	color:gold;
+	margin:10px;
+	padding:10px;
 }
 
 .container{
@@ -53,13 +86,25 @@ nav{
   align-items: center;
 }
 
-.card{
-  margin:10px;
-  text-align:center;
+.card {
+  width: 250px;
+  min-height: 200px;
+  margin: 10px;
+  text-align: center;
   border: 1px solid;
   padding: 10px;
   box-shadow: 5px 10px 8px #01153E;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+  overflow: hidden;
 }
+
 
 .fitted{
   max-width:200px;
